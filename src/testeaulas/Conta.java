@@ -78,15 +78,18 @@ public class Conta {
         
         if(t.equals("CC")){
             this.setSaldo(50);
+            System.out.println("Conta Corrente aberta com sucesso.");
         }
         else{
             this.setSaldo(150);
+            System.out.println("Conta Poupança aberta com sucesso.");
         }
     }
     
     public void fecharConta(){
         if(this.getSaldo()==0){
             this.setStatus(false);
+            System.out.println("Conta fechada com sucesso.");
         }
         else{
             System.out.println("Impossivél fechar a conta.");
@@ -96,7 +99,9 @@ public class Conta {
     public void depositar(double v){
         if(this.getStatus()==true){
             this.setSaldo(this.getSaldo() + v);
+            System.out.println("Deposito feito com sucesso.");
         }
+        
         else{
             System.out.println("Impossivel depositar.");
         }
@@ -107,6 +112,7 @@ public class Conta {
             if(this.getSaldo()>0){
                 this.setSaldo(this.getSaldo() - v);
             }
+            System.out.println("Saque feito com sucesso.");
         }
         else{
             System.out.println("Impossivel sacar.");
@@ -126,6 +132,7 @@ public class Conta {
             if(this.getSaldo()>0){
                 this.setSaldo(this.getSaldo()-v);
             }
+            System.out.println("Mensalidade paga por "+this.getDono());
         }
         else{
             System.out.println("Saldo Insuficiente");
